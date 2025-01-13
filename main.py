@@ -1,8 +1,9 @@
 % Car Detection Algorithm using Image Processing Techniques
 
-function detectCar(imagePath)
-    % Read the input image
-    img = imread(imagePath);
+% Main detection function
+function detectCar()
+    % Read the input image with specific file path
+    img = imread('C:\Users\VIHANGAK\Documents\dasun\15.png');
     
     % Convert to grayscale if image is RGB
     if size(img, 3) == 3
@@ -71,6 +72,3 @@ function [precision, recall] = evaluateDetection(groundTruth, detected)
     precision = sum(intersection(:)) / sum(detected(:));
     recall = sum(intersection(:)) / sum(groundTruth(:));
 end
-
-% Example usage:
-% detectCar('path_to_your_image.jpg');
